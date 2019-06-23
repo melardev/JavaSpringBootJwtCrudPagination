@@ -2,7 +2,6 @@ package com.melardev.spring.securejpacrud.dtos.responses;
 
 import com.melardev.spring.securejpacrud.entities.Todo;
 
-import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 public class TodoDetailsResponse extends SuccessResponse {

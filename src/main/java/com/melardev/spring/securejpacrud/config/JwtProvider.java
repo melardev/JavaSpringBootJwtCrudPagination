@@ -66,6 +66,10 @@ public class JwtProvider {
                 .getBody().getSubject();
     }
 
+    public String getSubjectFromToken(String token) {
+        return getClaimFromToken(token, Claims::getSubject);
+    }
+
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
     }
@@ -75,6 +79,7 @@ public class JwtProvider {
         return claimsResolver.apply(claims);
     }
 
+    // To retrieve specific field you can getAllClaimsFromToken().get("username", String.class)
     private Claims getAllClaimsFromToken(String token) {
         return Jwts.parser()
                 .setSigningKey(jwtSecret)
